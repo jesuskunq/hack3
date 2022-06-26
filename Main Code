@@ -1,0 +1,31 @@
+import java.util.Scanner;  // scanner
+// Create a Main class
+public class Main {
+  
+  public static String getFirstLetter(String word){
+    word = word.toLowerCase();
+    return word.substring(0,1);
+  }
+  public static String getLastLetter(String word){
+    word = word.toLowerCase();
+    return word.substring(word.length()-2,word.length()-1);
+  }  
+  
+
+  public static void main(String[] args) {
+    Scanner kb = new Scanner(System.in); // a setup step
+    System.out.println("This will tell you what two Sci-Fi characters that you resemble and their traits");
+    System.out.println("Enter your first name:");
+    String firstName = kb.nextLine();
+    System.out.println("Enter your last name:");
+    String lastName = kb.nextLine();
+
+    String firstLetter = Main.getFirstLetter(firstName);
+    String lastLetter = Main.getFirstLetter(lastName);
+
+    System.out.println("You are a " + Traits.assignFirstLetter(firstLetter) + ". " + Traits.assignFirstTrait(firstLetter));
+
+    System.out.println("You are a " + Traits.assignLastLetter(lastLetter) + ". " + Traits.assignLastTrait(lastLetter));
+kb.close();    
+  }
+}
